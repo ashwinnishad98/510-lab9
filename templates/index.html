@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+
+{% block main %}
+<div class="container">
+    <h1>Photo Hosting App</h1>
+    <h1>Welcome, {{ name }}!</h1>
+    <ul>
+        {% for photo in photos %}
+        <li>
+            <img src="{{ url_for('static', filename=photo['path']) }}" alt="{{ photo['name'] }}">
+            {{ photo['name'] }}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
